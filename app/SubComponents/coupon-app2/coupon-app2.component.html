@@ -1,0 +1,38 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+ 
+<form [hidden]="submitted" [formGroup]="regForm" novalidate (ngSubmit)="onPayment()">
+   
+  <div class="form-group">
+ 
+    <h3>Payment Details</h3>
+    <label>
+     <h3 class="label-txt">Account Id *</h3>
+     <br>
+     <input type="number"  class="form-control" formControlName="accountno"  [(ngModel)]="loginAccount.accountno">
+   
+    <div *ngIf="regForm.controls['accountno'].invalid && (regForm.controls['accountno'].dirty || regForm.controls['accountno'].touched)" class="alert alert-danger">
+        <div *ngIf="regForm.controls['accountno'].errors.required">
+        Account Number  is required & it should of 10
+      </div>
+      
+    </div>
+     
+    
+  </label>
+
+
+
+  <label>
+    <p class="label-txt">ENTER YOUR PASSWORD *</p>
+    <br>
+    <input type="password" class="form-control" formControlName="password"  [(ngModel)]="loginAccount.accPassword">
+
+</label> 
+    
+<button class="btn btn-primary" [disabled]="!regForm.valid" type="submit">Submit</button>
+</div>
+</form>
+

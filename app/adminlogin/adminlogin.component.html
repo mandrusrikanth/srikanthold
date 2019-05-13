@@ -1,0 +1,50 @@
+
+    <div class="form">
+        <div class="form-toggle"></div>
+        <div class="form-panel one">
+          <div class="form-header">
+          <h1 style="text-align:center">Admin Login</h1>
+          </div>
+          
+          <div class="form-content">
+              <div *ngIf="!check">
+                  <h3 class= "text-danger"> wrong Credentials</h3>
+              </div>
+              
+              <form [hidden]="submitted" [formGroup]="regForm" novalidate (ngSubmit)="onLogin()">
+              
+              <div class="form-group">
+                <label class = 'center-block'>Username:</label>
+                  <input type="text" class="form-control" placeholder="enter your name" formControlName="username"  id = "username"  [(ngModel)]="loginAccount.username" />
+              </div>
+            
+              <div *ngIf="regForm.controls['username'].invalid && (regForm.controls['username'].dirty || regForm.controls['username'].touched)" class="alert alert-danger">
+                <div *ngIf="regForm.controls['username'].errors.required">
+                  <b>  userName is required.</b>
+                </div>
+                
+              
+              </div>
+        
+              <div class="form-group">
+                <label>Password:</label>
+                <input type="password" class="form-control" placeholder="password" formControlName="password" id = "password" [(ngModel)]="loginAccount.password" />
+              </div>
+              <div *ngIf="regForm.controls['password'].invalid && (regForm.controls['password'].dirty || regForm.controls['password'].touched)" class="alert alert-danger">
+                <div *ngIf="regForm.controls['password'].errors.required">
+                Password  is required.
+                </div>
+              </div>
+        
+        
+        
+            <div class="form-group">
+           
+                <button class="btn btn-primary" [disabled]="!regForm.valid" type="submit">Login</button>
+               <!--  <button class="btn btn-primary"  [disabled]="regForm.pristine || regForm.invalid"  type="submit" (click)="onLogin(loginaccount.username,loginaccount.password)">Login</button> -->
+          </div>
+         
+          </form>
+          
+      </div>
+  </div> 

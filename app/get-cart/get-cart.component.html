@@ -1,0 +1,61 @@
+<style>
+  #background
+  {
+    background-color:honeydew;
+  }
+  </style>
+  <div class=container-fluid>
+    <br>
+    <br>
+    <div class="backgroundcolor" style="text-align:center" id=background>
+        <br>
+        <br>
+        <br>
+        <br>
+            <h1>
+                <p class="text-info">  Welcome  <b>{{readValue('uname')}}</b></p>
+           </h1>
+      
+         
+                 
+                 <br>
+                <!--  <h4><p class="text-success">Your copoun code is:</p></h4> -->
+  <!-- 
+                 <div *ngFor="let code of result">
+                    <p class="text-info"> {{code}}</p>
+  
+  
+                 </div> -->
+  
+  
+  
+  
+                 <div class="row">
+                    <div  *ngFor="let code of result"  class="center" >
+                        <div  *ngIf="code.username==readValue('uname')"  >
+                        <img class="card-img-top" src="{{code.imageUrl}}"  height = "300"  width ="10" alt="Card image cap">
+                        <div class="card-body">           
+                        <label><h4>Price:${{code.price}}</h4></label>
+                    
+                   
+              <form [hidden]="submitted" novalidate (ngSubmit)="buyNow()">
+                <button class="btn btn-primary"  type="submit">Buy Now</button>
+              </form>
+                        
+                        </div>
+                    </div>
+                  </div>
+            </div> 
+                 <div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    </div>
+  

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+ <style>
+  .input{
+    color: yellow
+  }
+body {
+
+  font-family: Arial;
+  background-image: url("https://previews.123rf.com/images/eatcute/eatcute1504/eatcute150419704/39600292-shopping-sale-coupon-flat-icon-eps10-seamless-pattern-background.jpg");
+}
+
+.coupon {
+  border: 5px dotted #bbb;
+  
+  border-radius: 15px;
+  
+}
+ .jumbotron{
+   background-image: url(" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYHuty2p76qSbTXBIDpCLNRARouEGwnCKBMCeEoMczx8LPoxiQjw")
+ }
+
+</style>
+<body>
+  <div class = "coupon">
+<div class="container" >
+  <div class="jumbotron">
+     <div class = "page-header"><h2>WELCOME</h2></div>
+       <div class="row">
+             <div class="col-sm-6" style="background-color:lavender;">
+
+            <img width = "500" height = "411" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRomTmp8XDKwWXWYvkqzSd_sgAb-Zufj_dLdHSzJcCj09lNonXk" >
+             <br><br>
+           
+            <form [hidden]="submitted" novalidate (ngSubmit)="OnCart()">
+                <button class="btn btn-primary"  type="submit">AddToCart</button>
+              </form>
+<br>
+<br>
+              <form [hidden]="submitted" novalidate (ngSubmit)="buyNow()">
+              <button class="btn btn-primary"  type="submit">Buy Now</button>
+            </form>
+          <!--   </a> -->
+          </div>
+
+ <div class="col-sm-6" style="background-color:lavender;"><h3><b>10% OFF</b></h3> 
+       <pre><h5><b><p class="text-primary">Coupon Price:</b></h5>$5
+             <h5><b><p class="text-primary">Description:</b></h5> valid only when purchase is greater than $50. Grab it fast
+         
+             <h5><b> <p class="text-primary">Expires On:</b></h5> 16/01/2021
+         </pre>
+ </div>
+ 
+ </div>
+    </div>      
+</div>
+</div>
+</body>
+</html>
